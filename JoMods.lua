@@ -1,6 +1,6 @@
 SMODS.Atlas {
-    key = "JokerMods",
-    path = "JokerMods.png",
+    key = "JoMods",
+    path = "JoMods.png",
     px = 71,
     py = 95
 }
@@ -17,7 +17,7 @@ SMODS.Joker {
     },
     config = { extra = { mult = 1, Xmult = 10, odds = 5}},
     rarity = 3,
-    atlas = 'JokerMods',
+    atlas = 'JoMods',
     pos = { x = 0, y = 0 },
     cost = 10,
     unlocked = true,
@@ -60,7 +60,7 @@ SMODS.Joker {
     config = {extra = {mult_gain = 15, mult_loss = 1, mult = 10, odds = 10} },
     rarity = 2,
     cost = 5,
-    atlas = 'JokerMods',
+    atlas = 'JoMods',
     pos = { x = 1, y = 0 },
     unlocked = true,
     discovered = true,
@@ -112,15 +112,16 @@ SMODS.Joker {
         text = 
         {
             "Each played card has {C:green}#1# in #2#{} chance",
-            "to be enhanced into a Gold Card. Remove enhancement",
-            "if it is already a Gold Card."
+            "to be enhanced into a {C:attention}Gold Card{}.",
+            "Remove enhancement if it is",
+            "already a {C:attention}Gold Card{}."
         }
     },
     config = {extra = {odds = 9} },
     rarity = 3,
     cost = 6,
-    atlas = 'JokerMods',
-    pos = { x = 3, y = 0 },
+    atlas = 'JoMods',
+    pos = { x = 2, y = 0 },
     unlocked = true,
     discovered = true,
     blueprint_compat = false,                            --does joker work with blueprint
@@ -153,7 +154,7 @@ SMODS.Joker {
 
         -- * better method
         if context.cardarea == G.play and context.individual and not context.other_card.debuff then
-            if pseudorandom('midas_factor') < (7*G.GAME.probabilities.normal) / card.ability.extra.odds then
+            if pseudorandom('midas_factor') < (2*G.GAME.probabilities.normal) / card.ability.extra.odds then
                 if context.other_card.ability.effect == "Gold Card" then -- If gold card, remove enhancement
                     G.E_MANAGER:add_event(Event({
                         func = function()
