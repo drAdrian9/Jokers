@@ -118,7 +118,7 @@ SMODS.Joker {
         }
     },
     config = {extra = {odds = 9} },
-    rarity = 3,
+    rarity = 2,
     cost = 6,
     atlas = 'JoMods',
     pos = { x = 2, y = 0 },
